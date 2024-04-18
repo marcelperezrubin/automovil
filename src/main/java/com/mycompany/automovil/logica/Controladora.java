@@ -28,7 +28,32 @@ public class Controladora {
       return controlPersis.traerAutos();
         
     }
-    
+
+    public void borrarAuto(int idAuto) {
+        controlPersis.borrarAuto(idAuto);
+    }
+
+    public Automovil traerAuto(int idAuto) {
+       
+        return controlPersis.traerAutos(idAuto);
+        
+        
+    }
+
+    public void modificarAuto(Automovil auto, String modelo, String marca,
+            String motor, String color, String matricula, int cantPuertas) {
+        
+        auto.setColor(color);
+        auto.setModelo(modelo);
+        auto.setMarca(marca);
+        auto.setMatricula(matricula);
+        auto.setMotor(motor);
+        auto.setCantPuertas(cantPuertas);
+        
+        // le pedimos a la persistencia que modifique
+        
+        controlPersis.modificarAuto(auto);
+        
+    }
   
-    
 }
